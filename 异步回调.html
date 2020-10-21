@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .box{
+    width:100px;
+    height:100px;
+    position:absolute;
+    left:0px;
+    top:0px;
+    background:red
+
+    }
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+<script>
+
+    function move(ele,target,dir,cb){
+        let startLeft=parseInt(window.getComputedStyle(ele,null)[dir]);
+        // let speed=1;
+        let speed=target-startLeft>0? 1:-1
+        setTimeout(()=>{
+            startLeft+=speed;
+            if(startLeft==target){
+                console.log("finished");
+                cb && cb();
+            }else{
+                ele.style[dir]=startLeft+"px";
+                move(ele,target,dir,cb)
+            }
+        },10);
+
+    }
+    let ele=document.querySelector(".box");
+    // h回调地狱
+    move(ele,300,"left",function(){
+        console.log("运动完成了")
+        move(ele,300,"top",function(){
+            console.log("hah");
+            move(ele,0,"left",function(){
+            console.log("left");
+            move(ele,0,"top",function(){
+
+            })
+        });
+        });
+    }
+    );
+    
+</script>
+</html>

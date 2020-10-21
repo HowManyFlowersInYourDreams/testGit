@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../JVue.js" type="text/script"></script>
+</head>
+<body>
+    <div id="app">{{message}}</div>
+</body>
+<script>
+// MVVM--->数据驱动-->数据响应式
+//1:如何把数据渲染到视图
+let v=new JVue({
+    el:"#app",
+    data:{
+        message:"数据"
+    }
+
+});
+
+
+</script>
+
+</html>

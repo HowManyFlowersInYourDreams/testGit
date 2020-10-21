@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+// promise 三种状态 pendding（等待） fullfilled（成功） rejected(失败)
+
+// let p1=new Promise((resolve,reject)=>{
+//  //resolve();
+//  reject("test");
+// });
+// console.log(p1);
+// promise 默认有then 方法，会有两个参数--onResolved ,onRejected
+
+let p2=new Promise((resolve,rejected)=>{
+    //resolve("111");
+    rejected("222");
+});
+
+p2.then((resolve)=>{
+    console.log("successful");
+},(rejected)=>{
+    console.log("failed");
+})
+console.log(p2);
+
+// then 里面的三种返还值。
+
+</script>
+</html>

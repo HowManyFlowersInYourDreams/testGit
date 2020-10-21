@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">{{message}}</div>
+     
+</body>
+<script>
+// MVVM--->数据驱动-->数据响应式
+//1:如何把数据渲染到视图
+let v=new Vue({
+    el:"#app",
+    data:{
+        message:"数据"
+    }
+
+});
+// 如何实现数据响应式
+setTimeout(()=>{
+    v._data.message="update";
+    console.log(v);
+},100);
+
+</script>
+</html>
